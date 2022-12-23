@@ -1,22 +1,19 @@
-import { fetchTrendingMovies } from 'api-service/apiService';
-import { useEffect } from 'react';
-
+import { Route, Routes, Link } from 'react-router-dom';
+import { Home } from 'pages/Home';
+import { Movies } from 'pages/Movies';
 export const App = () => {
-  useEffect(() => {
-    fetchTrendingMovies();
-  });
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
-      React homework template
+    <div>
+      <header>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/movies">Movies</Link>
+        </nav>
+      </header>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="movies" element={<Movies />}></Route>
+      </Routes>
     </div>
   );
 };
