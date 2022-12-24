@@ -1,8 +1,8 @@
-// import { TrendList } from 'components/TrendList';
 import { useState, useEffect } from 'react';
 import { getTrendingMovies } from 'api-service/api-service';
-import { RenderList } from 'components/RenderList';
-export const Home = () => {
+import RenderList from 'components/RenderList';
+
+const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
 
   useEffect(() => {
@@ -16,6 +16,7 @@ export const Home = () => {
     };
     fetchTrendingMovies();
   }, []);
+
   return (
     <main>
       <h1>Trending today</h1>
@@ -23,3 +24,4 @@ export const Home = () => {
     </main>
   );
 };
+export default Home;

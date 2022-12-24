@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getSearchMovie } from 'api-service/api-service';
-import { SearchBox } from '../components/SearchBox';
-import { RenderList } from 'components/RenderList';
+import SearchBox from '../components/SearchBox';
+import RenderList from 'components/RenderList';
 
-export const Movies = () => {
+const Movies = () => {
   const [searchMovie, setMovie] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
@@ -34,3 +34,5 @@ export const Movies = () => {
     </main>
   );
 };
+
+export default Movies;

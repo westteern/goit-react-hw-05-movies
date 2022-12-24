@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BiSearch } from 'react-icons/bi';
 
-export const SearchBox = ({ onSubmit }) => {
+const SearchBox = ({ onSubmit }) => {
   const [searchQuery, setsearchQuery] = useState('');
 
   const handleInput = e => {
@@ -50,3 +50,5 @@ export const SearchBox = ({ onSubmit }) => {
 SearchBox.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
+
+export default SearchBox;
