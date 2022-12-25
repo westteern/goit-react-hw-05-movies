@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getSearchMovie } from 'api-service/api-service';
 import { ToastContainer } from 'react-toastify';
-import SearchBox from '../components/SearchBox';
-import RenderList from 'components/RenderList';
+import SearchBox from '../components/SearchBox/SearchBox';
+import RenderList from 'components/RenderList/RenderList';
 import Loader from 'components/Loader';
 
 const Movies = () => {

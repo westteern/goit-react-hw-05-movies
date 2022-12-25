@@ -4,6 +4,14 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BiSearch } from 'react-icons/bi';
 
+import {
+  Wrapper,
+  StyledForm,
+  StyledSearchFormBtn,
+  StyledSpan,
+  StyledInput,
+} from './SearchBox.styled';
+
 const SearchBox = ({ onSubmit }) => {
   const [searchQuery, setsearchQuery] = useState('');
 
@@ -22,9 +30,9 @@ const SearchBox = ({ onSubmit }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
+    <Wrapper>
+      <StyledForm onSubmit={handleSubmit}>
+        <StyledInput
           onChange={handleInput}
           value={searchQuery}
           type="text"
@@ -32,7 +40,7 @@ const SearchBox = ({ onSubmit }) => {
           autoFocus
           placeholder="Search movies"
         />
-        <button type="submit">
+        <StyledSearchFormBtn type="submit">
           <BiSearch
             style={{
               width: '20',
@@ -40,10 +48,10 @@ const SearchBox = ({ onSubmit }) => {
               verticalAlign: 'middle',
             }}
           />
-        </button>
-        {/* <span>Search</span> */}
-      </form>
-    </div>
+        </StyledSearchFormBtn>
+        <StyledSpan>Search</StyledSpan>
+      </StyledForm>
+    </Wrapper>
   );
 };
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getTrendingMovies } from 'api-service/api-service';
-import RenderList from 'components/RenderList';
+import RenderList from 'components/RenderList/RenderList';
 import Loader from 'components/Loader';
 
 const Home = () => {

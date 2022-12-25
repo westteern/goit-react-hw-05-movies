@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCredits } from 'api-service/api-service';
+import { Img } from './Cast.styled';
 
 const Cast = () => {
   const { id } = useParams();
@@ -21,7 +22,7 @@ const Cast = () => {
 
   const castItem = movieCasts.map(({ name, character, profile_path, id }) => (
     <li key={id}>
-      <img
+      <Img
         src={
           !profile_path
             ? 'https://via.placeholder.com/200x300?text=Photo+Not+Found'
