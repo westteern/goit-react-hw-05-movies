@@ -1,6 +1,7 @@
 import { Link, Outlet } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Img, Wrapper, InfoList } from './MovieCard.styled';
+import { Img, Wrapper, InfoList, GoBackBtn } from './MovieCard.styled';
+import { BiLeftArrowAlt } from 'react-icons/bi';
 
 const MovieCard = ({
   goBack,
@@ -14,7 +15,16 @@ const MovieCard = ({
 }) => {
   return (
     <main>
-      <button onClick={goBack}>Go back</button>
+      <GoBackBtn type="button" onClick={goBack}>
+        <BiLeftArrowAlt
+          style={{
+            width: '15',
+            height: '15',
+            verticalAlign: 'middle',
+          }}
+        />
+        Go back
+      </GoBackBtn>
       <Wrapper>
         <Img src={poster} alt={title} />
         <div>
