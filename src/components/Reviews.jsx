@@ -32,7 +32,7 @@ const Reviews = () => {
           {reviewsItem.length ? (
             reviewsItem
           ) : (
-            <p>We don't have any reviews for this movie</p>
+            <p>We don't have any reviews for this movie.</p>
           )}
         </ul>
       </div>

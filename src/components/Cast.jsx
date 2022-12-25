@@ -21,7 +21,14 @@ const Cast = () => {
 
   const castItem = movieCasts.map(({ name, character, profile_path, id }) => (
     <li key={id}>
-      <img src={`https://image.tmdb.org/t/p/w200/${profile_path}`} alt={name} />
+      <img
+        src={
+          !profile_path
+            ? 'https://via.placeholder.com/200x300?text=Photo+Not+Found'
+            : `https://image.tmdb.org/t/p/w200/${profile_path}`
+        }
+        alt={name}
+      />
       <p>{name}</p>
       <p>Character: {character}</p>
     </li>
@@ -29,7 +36,13 @@ const Cast = () => {
   return (
     <section>
       <div>
-        <ul>{castItem}</ul>
+        <ul>
+          {castItem.length ? (
+            castItem
+          ) : (
+            <p>Sorry, but no cast list was found for this movie.</p>
+          )}
+        </ul>
       </div>
     </section>
   );
